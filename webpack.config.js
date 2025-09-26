@@ -4,28 +4,28 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
-        test: /.jsx?$/,
+        test: /.jsx?$/, 
         exclude: /node_modules/, 
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+    ],
   },
   devServer: {
     static: './dist',
-    hot: true
+    hot: true,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  mode: 'development'
+  mode: 'development',
 };
